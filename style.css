@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.wrapper {
+    background-color: #f8f8f8;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+.wrapper .header {
+    grid-area: header;
+    min-height: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.wrapper .header .nav {
+    display: none;
+}
+.wrapper .header .nav .nav__list {
+    list-style-type: none;
+    display: flex;
+    gap: 4rem;
+}
+.wrapper .header .nav__list .nav__item a {
+    text-decoration: none;
+    color: #0C1B33;
+}
+.wrapper .header i {
+    padding: 1rem 1.5rem;
+}
+
+.wrapper .main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 3rem 3rem 3rem;
+}
+.wrapper .main .main__title {
+    font-weight: 100;
+    font-size: 2.3rem;
+}
+.wrapper .main .main__text {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+}
+.wrapper .main .main__btn {
+    background-color: #536DFE;
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.wrapper .footer {
+    width: 100%;
+    min-height: 40rem;
+    grid-area: footer;
+    background-image: url(images/undraw_pet_adoption_mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        margin: 0 auto;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: 
+        "header header header header header"
+        ". main footer footer . ";
+    }
+    .wrapper .header {
+        justify-content: space-evenly;
+    }
+
+    .wrapper .header .nav {
+        display: block;
+    }
+
+    .wrapper .header .fas {
+        display: none;
+    }
+
+}
